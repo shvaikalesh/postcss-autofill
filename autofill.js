@@ -13,6 +13,8 @@ const plugin = root => root.walkRules(pseudo, rule =>
         .append(to)
         .moveBefore(rule)
 
+    at.source = rule.source
+
     rule.walkDecls(decl => decl.moveTo(to))
     rule.append(`animation: ${params} both`)
 
